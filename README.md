@@ -21,7 +21,7 @@ Feedback on this solution is welcome. Tweet me [@craigsmitham](https://twitter.c
 * .NET Solution Conventions 
 * Learning and Next Steps
 
-## Prerequisates
+## Prerequisites
 
 ### Git
 Install Git for Windows. Install with the reccomended options, including using Git from the Windows Command Prompt. 
@@ -34,7 +34,7 @@ This guide assumes you will be developing with Visual Studio.
 
 ### build.cmd
 A simple batch file name 'build.cmd', located in the solution root, acts as a wrapper around the build system. 
-As long as all prerequrisates are installed, running this command should execute the build in one step. 
+As long as all prerequisites are installed, running this command should execute your build in one step. 
 This script can also be used to simplify the execution of common build commands, such as
 compiling, testing, and package creation.
 

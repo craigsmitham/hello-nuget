@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>@project@</id>
+    <version>@build.number@</version>
+    <authors>@authors@</authors>
+    <owners>@authors@</owners>
+    <summary>@summary@</summary>
+    <licenseUrl>https://github.com/craigsmitham/hello-nuget/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/craigsmitham/hello-nuget</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>@description@</description>
+    <releaseNotes>@releaseNotes@</releaseNotes>
+    <copyright>Copyright Craig Smitham 2014</copyright>
+    <tags>@tags@</tags>
+    @dependencies@
+    @references@
+  </metadata>
+</package>

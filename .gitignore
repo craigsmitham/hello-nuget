@@ -2,8 +2,7 @@
 [Tt]humbs.db
 *.DS_Store
 
-packaging
-testresults
+temp
 
 [Bb]in
 [Oo]bj

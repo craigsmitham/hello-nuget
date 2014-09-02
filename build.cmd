@@ -1,30 +1,18 @@
 @echo off
 
+: Ensure FAKE is installed
 "tools\nuget.exe" "Install" "FAKE" "-OutputDirectory" "packages" "-ExcludeVersion"
-
-:Build
 cls
 
-SET TARGET="Default"
+: Build
 
-IF NOT [%1]==[] (set TARGET="%1")
+: Get build target from first parameter or set default
+IF [%1]==[] (set TARGET="BuildApp") ELSE (set TARGET="%1")
 
-SET BUILDMODE="Release"
-IF NOT [%2]==[] (set BUILDMODE="%2")
-
-:: because we want to run specific steps inline on qed
-:: we need to break the dependency chain
-:: this ensures we do a build before running any tests
-
-if %TARGET%=="Default" (SET RunBuild=1)
-if %TARGET%=="CreatePackages" (SET RunBuild=1)
-
-if NOT "%RunBuild%"=="" (
-	"packages\FAKE\tools\Fake.exe" "build.fsx" "target=BuildApp" "buildMode=%BUILDMODE%"
-)
+: Get build mode from second parameter or set default
+IF [%2]==[] (set BUILDMODE="Release") ELSE (set BUILDMODE="%2")
 
 "packages\FAKE\tools\Fake.exe" "build.fsx" "target=%TARGET%" "buildMode=%BUILDMODE%"
 
-
-:Quit
+: Quit
 exit /b %errorlevel%
